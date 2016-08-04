@@ -37745,99 +37745,6 @@ module.exports = function (str) {
 };
 
 },{}],452:[function(require,module,exports){
-module.exports={
-  "name": "dilyanasavcheva",
-  "version": "0.0.1",
-  "description": "Simple stepper with embedded social media posts and questionnaires based on React JS application skeleton (by Maurizio Mangione, https://github.com/Granze/react-starterify) using Browserify and other awesome tools",
-  "main": "app.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/skDn/mygithubpage"
-  },
-  "keywords": [
-    "gulp",
-    "react",
-    "material-ui",
-    "browserify",
-    "seed",
-    "boilerplate",
-    "kickstarter",
-    "ES6",
-    "ES2015",
-    "babel",
-    "ava"
-  ],
-  "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
-  },
-  "scripts": {
-    "start": "npm run watch",
-    "watch": "gulp watch",
-    "build": "gulp build",
-    "deploy": "gulp deploy",
-    "test": "ava --tap | tap-nyan"
-  },
-  "author": "skDn",
-  "license": "",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "http://skdndevelopment.me/",
-  "dependencies": {
-    "history": "^3.0.0",
-    "material-ui": "^0.15.2",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
-    "react-router": "^2.3.0",
-    "react-tap-event-plugin": "^1.0.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^6.3.6",
-    "ava": "^0.15.2",
-    "babel": "^6.5.2",
-    "babel-core": "^6.7.7",
-    "babel-eslint": "^6.0.4",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-register": "^6.7.2",
-    "babelify": "^7.3.0",
-    "browser-sync": "^2.12.5",
-    "browserify": "^13.0.0",
-    "cssnano": "^3.5.2",
-    "eslint": "^2.8.0",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.6.0",
-    "eslint-plugin-jsx-a11y": "^1.0.3",
-    "eslint-plugin-react": "^5.0.1",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^2.0.0",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-html-replace": "^1.5.5",
-    "gulp-imagemin": "^3.0.1",
-    "gulp-notify": "^2.2.0",
-    "gulp-postcss": "^6.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.0.0-alpha",
-    "gulp-uglify": "^1.5.3",
-    "imagemin-pngquant": "^5.0.0",
-    "lodash": "^4.11.1",
-    "postcss-nested": "^1.0.0",
-    "postcss-simple-extend": "^1.0.0",
-    "postcss-simple-vars": "^2.0.0",
-    "react-addons-test-utils": "^15.0.1",
-    "rimraf": "^2.5.2",
-    "run-sequence": "^1.1.5",
-    "tap-nyan": "0.0.2",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
-  }
-}
-
-},{}],453:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -37850,17 +37757,15 @@ var _App = require('./components/App');
 
 var _App2 = _interopRequireDefault(_App);
 
-var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
+var _reactTapEventPlugin = require('react-tap-event-plugin');
 
-var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
+var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+
+var _reactRouter = require('react-router');
 
 var _HorizontalLinearStepper = require('./components/HorizontalLinearStepper');
 
 var _HorizontalLinearStepper2 = _interopRequireDefault(_HorizontalLinearStepper);
-
-var _reactTapEventPlugin = require('react-tap-event-plugin');
-
-var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37870,9 +37775,18 @@ window.React = _react2.default;
 // http://stackoverflow.com/a/34015469/988941
 (0, _reactTapEventPlugin2.default)();
 
-(0, _reactDom.render)(_react2.default.createElement(_App2.default, null), document.getElementById('content'));
+(0, _reactDom.render)(_react2.default.createElement(
+  _reactRouter.Router,
+  { history: _reactRouter.hashHistory },
+  _react2.default.createElement(
+    _reactRouter.Route,
+    { path: '/', component: _App2.default },
+    _react2.default.createElement(_reactRouter.Route, { path: 'p', positive: true, component: _HorizontalLinearStepper2.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: 'n', positive: false, component: _HorizontalLinearStepper2.default })
+  )
+), document.getElementById('content'));
 
-},{"./components/App":454,"./components/HorizontalLinearStepper":455,"material-ui/styles/MuiThemeProvider":204,"react":438,"react-dom":227,"react-tap-event-plugin":290}],454:[function(require,module,exports){
+},{"./components/App":453,"./components/HorizontalLinearStepper":454,"react":438,"react-dom":227,"react-router":257,"react-tap-event-plugin":290}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37883,46 +37797,26 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = require('react-router');
-
-var _package = require('../../package.json');
-
 var _MuiThemeProvider = require('material-ui/styles/MuiThemeProvider');
 
 var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
-var _HorizontalLinearStepper = require('./HorizontalLinearStepper');
-
-var _HorizontalLinearStepper2 = _interopRequireDefault(_HorizontalLinearStepper);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var App = function App(_ref) {
-  var children = _ref.children;
-  return (
-    // <div>
-    //   <header>
-    //     <h1>React Starterify {version}</h1>
-    //     <Link to="/about">About</Link>
-    //     <Link to="/poweredby">Powered by</Link>
-    //   </header>
-    //   <section>
-    //     {children || 'Welcome to React Starterify'}
-    //   </section>
-    // </div>
-    _react2.default.createElement(
+var App = _react2.default.createClass({
+  displayName: 'App',
+  render: function render() {
+    return _react2.default.createElement(
       _MuiThemeProvider2.default,
       null,
-      _react2.default.createElement(_HorizontalLinearStepper2.default, null)
-    )
-  );
-};
-
-App.propTypes = { children: _react2.default.PropTypes.object };
+      this.props.children
+    );
+  }
+});
 
 exports.default = App;
 
-},{"../../package.json":452,"./HorizontalLinearStepper":455,"material-ui/styles/MuiThemeProvider":204,"react":438,"react-router":257}],455:[function(require,module,exports){
+},{"material-ui/styles/MuiThemeProvider":204,"react":438}],454:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37967,7 +37861,7 @@ var HorizontalLinearStepper = _react2.default.createClass({
 
     this.setState({
       stepIndex: stepIndex + 1,
-      finished: stepIndex >= 2
+      finished: stepIndex >= 4
     });
     this.forceUpdate();
   },
@@ -37983,27 +37877,37 @@ var HorizontalLinearStepper = _react2.default.createClass({
   getStepContent: function getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
-        return 'Select campaign settings...';
+        return 'Concent Form';
       case 1:
-        return 'What is an ad group anyways?';
+        return 'Facebook posts';
       case 2:
-        return 'This is the bit I really care about!';
+        return _react2.default.createElement(
+          'div',
+          { style: { height: '549px' } },
+          _react2.default.createElement('iframe', { width: '100%', height: '100%', frameBorder: '0', allowTransparency: 'true', src: 'https://www.surveymonkey.com/r/PTDRJPJ' })
+        );
+      case 3:
+        return 'Twitter posts';
+      case 4:
+        return _react2.default.createElement(
+          'div',
+          { style: { height: '549px' } },
+          _react2.default.createElement('iframe', { width: '100%', height: '100%', frameBorder: '0', allowTransparency: 'true', src: 'https://www.surveymonkey.com/r/PTDRJPJ' })
+        );
       default:
         return 'You\'re a long way from home sonny jim!';
     }
   },
   render: function render() {
-    var _this = this;
-
     var _state = this.state;
     var finished = _state.finished;
     var stepIndex = _state.stepIndex;
 
-    var contentStyle = { margin: '0 16px' };
-
+    var contentStyle = { margin: '0 16px', height: '100%' };
+    console.log(this.props.route.positive);
     return _react2.default.createElement(
       'div',
-      { style: { width: '100%', maxWidth: 700, margin: 'auto' } },
+      { style: { width: '100%', maxWidth: 700, margin: 'auto', height: '100%' } },
       _react2.default.createElement(
         _Stepper.Stepper,
         { activeStep: stepIndex },
@@ -38013,7 +37917,7 @@ var HorizontalLinearStepper = _react2.default.createClass({
           _react2.default.createElement(
             _Stepper.StepLabel,
             null,
-            'Select campaign settings'
+            'Sign concent form'
           )
         ),
         _react2.default.createElement(
@@ -38022,7 +37926,7 @@ var HorizontalLinearStepper = _react2.default.createClass({
           _react2.default.createElement(
             _Stepper.StepLabel,
             null,
-            'Create an ad group'
+            'Browse Facebook feed'
           )
         ),
         _react2.default.createElement(
@@ -38031,7 +37935,25 @@ var HorizontalLinearStepper = _react2.default.createClass({
           _react2.default.createElement(
             _Stepper.StepLabel,
             null,
-            'Create an ad'
+            'Fill in a questionnare'
+          )
+        ),
+        _react2.default.createElement(
+          _Stepper.Step,
+          null,
+          _react2.default.createElement(
+            _Stepper.StepLabel,
+            null,
+            'Browse Twitter feed'
+          )
+        ),
+        _react2.default.createElement(
+          _Stepper.Step,
+          null,
+          _react2.default.createElement(
+            _Stepper.StepLabel,
+            null,
+            'Fill in a questionnare'
           )
         )
       ),
@@ -38041,37 +37963,21 @@ var HorizontalLinearStepper = _react2.default.createClass({
         this.state.finished ? _react2.default.createElement(
           'p',
           null,
-          _react2.default.createElement(
-            'a',
-            {
-              href: '#',
-              onClick: function onClick(event) {
-                event.preventDefault();
-                _this.setState({ stepIndex: 0, finished: false });
-              }
-            },
-            'Click here'
-          ),
-          ' to reset the example.'
+          'Thank you so much for completing the forms!'
         ) : _react2.default.createElement(
           'div',
-          null,
-          _react2.default.createElement(
-            'p',
-            null,
-            this.getStepContent(stepIndex)
-          ),
+          { style: { height: '100%' } },
+          this.getStepContent(stepIndex),
           _react2.default.createElement(
             'div',
             { style: { marginTop: 12 } },
-            _react2.default.createElement(_FlatButton2.default, {
-              label: 'Back',
-              disabled: stepIndex === 0,
-              onTouchTap: this.handlePrev,
-              style: { marginRight: 12 }
-            }),
+            this.state.stepIndex === 2 || this.state.stepIndex === 4 ? _react2.default.createElement(
+              'p',
+              null,
+              'Please complete the questionnare first'
+            ) : "",
             _react2.default.createElement(_RaisedButton2.default, {
-              label: stepIndex === 2 ? 'Finish' : 'Next',
+              label: stepIndex === 4 ? 'Finish' : 'Next',
               primary: true,
               onTouchTap: this.handleNext
             })
@@ -38084,7 +37990,7 @@ var HorizontalLinearStepper = _react2.default.createClass({
 
 exports.default = HorizontalLinearStepper;
 
-},{"material-ui/FlatButton":181,"material-ui/RaisedButton":185,"material-ui/Stepper":192,"react":438}]},{},[453])
+},{"material-ui/FlatButton":181,"material-ui/RaisedButton":185,"material-ui/Stepper":192,"react":438}]},{},[452])
 
 
 //# sourceMappingURL=app.js.map
