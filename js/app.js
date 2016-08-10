@@ -37786,7 +37786,7 @@ window.React = _react2.default;
   )
 ), document.getElementById('content'));
 
-},{"./components/App":453,"./components/HorizontalLinearStepper":454,"react":438,"react-dom":227,"react-router":257,"react-tap-event-plugin":290}],453:[function(require,module,exports){
+},{"./components/App":453,"./components/HorizontalLinearStepper":455,"react":438,"react-dom":227,"react-router":257,"react-tap-event-plugin":290}],453:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -37820,6 +37820,152 @@ exports.default = App;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Concent = _react2.default.createClass({
+	displayName: 'Concent',
+	render: function render() {
+		return _react2.default.createElement(
+			'div',
+			null,
+			_react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h3',
+					{ className: 'text-center' },
+					'Plain Language Statement'
+				),
+				_react2.default.createElement(
+					'p',
+					null,
+					_react2.default.createElement(
+						'em',
+						null,
+						'You are being invited to take part in a research study. Before you decide it is important for you to understand why the research is being done and what it will involve. Please take the time to read the following information carefully and do not hesitate to raise any questions. '
+					)
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'h4',
+					null,
+					'Title of Project: \'Social Media\'s Impact on Human Consumption Behaviour and Attitudes towards Different Brands and Companies”'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					{ style: { float: 'right' } },
+					'Name of Researcher: Dilyana Savcheva'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					null,
+					'I am conducting this study as part of my Undergraduate Sociology Dissertation at the University of Glasgow. Through this study, I aim to evaluate student\'s behaviour on 2 leading social media channels – Facebook and Twitter. For these purposes, you are invited to participate in a three-stage experiment. The first part involves answering some general questions (e.g. age, gender, social media consumption). It is followed by a second section, which requires you to scroll through the provided Facebook and Twitter newsfeeds, at your own pace. The experiment concludes with a final part consisting of a few questions in regard to the viewed newsfeeds.'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					null,
+					'Please note that your participation in the study is entirely voluntary. The experiment will take about 10 minutes to complete. If you decide to take part, you will be asked to complete each section in order to proceed to the next one. Nevertheless, you are free to withdraw from participating at any time before or during the experiment. Additionally, if, for any reason, you want to withdraw from the project you may do so without providing explanation, by contacting the researcher before ……..'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					null,
+					'Finally, any personal or identifiable information that is collected through the experiment will be kept strictly anonymous and the answers will remain confidential as only the researcher is having access to it.'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					null,
+					'If you have any further questions please contact me at 2091499S@student.gla.ac.uk.'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					null,
+					'Thank you for taking the time to read this information sheet.'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					null,
+					'If you have any concerns regarding the conduct of this research project, you can contact the College of Social Sciences Ethics Officer Dr Muir Houston, email: Muir.Houston@glasgow.ac.uk'
+				),
+				_react2.default.createElement('br', null)
+			),
+			_react2.default.createElement('hr', null),
+			_react2.default.createElement(
+				'div',
+				null,
+				_react2.default.createElement(
+					'h3',
+					{ className: 'text-center' },
+					'Consent Form'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'h4',
+					null,
+					'Title of Project: \'Social Media\'s Impact on Human Consumption Behaviour and Attitudes towards Different Brands and Companies”'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'p',
+					{ style: { float: 'right' } },
+					'Name of Researcher: Dilyana Savcheva'
+				),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement('br', null),
+				_react2.default.createElement(
+					'ol',
+					null,
+					_react2.default.createElement(
+						'li',
+						null,
+						'I confirm that I have read and understand the Plain Language Statement for the study and have had the opportunity to ask questions.'
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						'I understand that my personal details will be kept confidentially and no identifiable information will appear in the report arising from the research. '
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						'I understand that my participation is voluntary and that I am free to withdraw at any time, without giving a reason or being penalised.'
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						'I agree to have my responses used for the purposes of the research.'
+					),
+					_react2.default.createElement(
+						'li',
+						null,
+						'I agree to take part in the study.'
+					)
+				)
+			)
+		);
+	}
+});
+
+exports.default = Concent;
+
+},{"react":438}],455:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
@@ -37837,6 +37983,10 @@ var _FlatButton = require('material-ui/FlatButton');
 
 var _FlatButton2 = _interopRequireDefault(_FlatButton);
 
+var _Concent = require('./Concent');
+
+var _Concent2 = _interopRequireDefault(_Concent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -37852,7 +38002,8 @@ var HorizontalLinearStepper = _react2.default.createClass({
   getInitialState: function getInitialState() {
     return {
       finished: false,
-      stepIndex: 0
+      stepIndex: 0,
+      stepText: ['Sign concent form', 'Personal Information Servey', 'Browse Facebook feed', 'Fill in a questionnare', 'Browse Twitter feed', 'Fill in a questionnare']
     };
   },
 
@@ -37861,7 +38012,7 @@ var HorizontalLinearStepper = _react2.default.createClass({
 
     this.setState({
       stepIndex: stepIndex + 1,
-      finished: stepIndex >= 4
+      finished: stepIndex >= 5
     });
     this.forceUpdate();
   },
@@ -37874,26 +38025,55 @@ var HorizontalLinearStepper = _react2.default.createClass({
     }
   },
 
+  /**
+   * Getting a servey.
+   * @param {boolean} facebook - is the servey for facebook or not. If not, it is for twitter.
+   * @param {boolean} positive - is the servey positive or not.
+   */
+  getServey: function getServey(facebook, positive) {
+    if (facebook && positive) {
+      return _react2.default.createElement(
+        'div',
+        { style: { height: '1064px', maxWidth: '700px' }, className: 'center-block' },
+        _react2.default.createElement('iframe', { width: '100%', height: '100%', frameBorder: '0', allowTransparency: 'true', src: 'https://surveymonkey.com/r/N7YZQBP' })
+      );
+    } else if (!facebook && positive) {
+      return _react2.default.createElement(
+        'div',
+        { style: { height: '1028px', maxWidth: '700px' }, className: 'center-block' },
+        _react2.default.createElement('iframe', { width: '100%', height: '100%', frameBorder: '0', allowTransparency: 'true', src: 'https://surveymonkey.com/r/N97PVW7' })
+      );
+    } else if (facebook && !positive) {
+      return _react2.default.createElement(
+        'div',
+        { style: { height: '1064px', maxWidth: '700px' }, className: 'center-block' },
+        _react2.default.createElement('iframe', { width: '100%', height: '100%', frameborder: '0', allowtransparency: 'true', src: 'https://surveymonkey.com/r/N9H85WZ' })
+      );
+    }
+    return _react2.default.createElement(
+      'div',
+      { style: { height: '1028px', maxWidth: '700px' }, className: 'center-block' },
+      _react2.default.createElement('iframe', { width: '100%', height: '100%', frameborder: '0', allowtransparency: 'true', src: 'https://surveymonkey.com/r/N9ZLZBQ' })
+    );
+  },
   getStepContent: function getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
-        return 'Concent Form';
+        return _react2.default.createElement(_Concent2.default, null);
       case 1:
-        return 'Facebook posts';
+        return _react2.default.createElement(
+          'div',
+          { style: { height: '995px', maxWidth: '700px' }, className: 'center-block' },
+          _react2.default.createElement('iframe', { width: '100%', height: '100%', frameBorder: '0', allowTransparency: 'true', src: 'https://surveymonkey.com/r/KBSCWQ9' })
+        );
       case 2:
-        return _react2.default.createElement(
-          'div',
-          { style: { height: '549px' } },
-          _react2.default.createElement('iframe', { width: '100%', height: '100%', frameBorder: '0', allowTransparency: 'true', src: 'https://www.surveymonkey.com/r/PTDRJPJ' })
-        );
+        return 'Facebook posts';
       case 3:
-        return 'Twitter posts';
+        return this.getServey(true, this.props.route.positive);
       case 4:
-        return _react2.default.createElement(
-          'div',
-          { style: { height: '549px' } },
-          _react2.default.createElement('iframe', { width: '100%', height: '100%', frameBorder: '0', allowTransparency: 'true', src: 'https://www.surveymonkey.com/r/PTDRJPJ' })
-        );
+        return 'Twitter posts';
+      case 5:
+        return this.getServey(false, this.props.route.positive);
       default:
         return 'You\'re a long way from home sonny jim!';
     }
@@ -37904,58 +38084,24 @@ var HorizontalLinearStepper = _react2.default.createClass({
     var stepIndex = _state.stepIndex;
 
     var contentStyle = { margin: '0 16px', height: '100%' };
-    console.log(this.props.route.positive);
+
     return _react2.default.createElement(
       'div',
-      { style: { width: '100%', maxWidth: 700, margin: 'auto', height: '100%' } },
+      { style: { width: '100%', margin: 'auto', height: '100%' } },
       _react2.default.createElement(
         _Stepper.Stepper,
         { activeStep: stepIndex },
-        _react2.default.createElement(
-          _Stepper.Step,
-          null,
-          _react2.default.createElement(
-            _Stepper.StepLabel,
-            null,
-            'Sign concent form'
-          )
-        ),
-        _react2.default.createElement(
-          _Stepper.Step,
-          null,
-          _react2.default.createElement(
-            _Stepper.StepLabel,
-            null,
-            'Browse Facebook feed'
-          )
-        ),
-        _react2.default.createElement(
-          _Stepper.Step,
-          null,
-          _react2.default.createElement(
-            _Stepper.StepLabel,
-            null,
-            'Fill in a questionnare'
-          )
-        ),
-        _react2.default.createElement(
-          _Stepper.Step,
-          null,
-          _react2.default.createElement(
-            _Stepper.StepLabel,
-            null,
-            'Browse Twitter feed'
-          )
-        ),
-        _react2.default.createElement(
-          _Stepper.Step,
-          null,
-          _react2.default.createElement(
-            _Stepper.StepLabel,
-            null,
-            'Fill in a questionnare'
-          )
-        )
+        this.state.stepText.map(function (text, index) {
+          return _react2.default.createElement(
+            _Stepper.Step,
+            { key: index },
+            _react2.default.createElement(
+              _Stepper.StepLabel,
+              null,
+              text
+            )
+          );
+        })
       ),
       _react2.default.createElement(
         'div',
@@ -37967,17 +38113,22 @@ var HorizontalLinearStepper = _react2.default.createClass({
         ) : _react2.default.createElement(
           'div',
           { style: { height: '100%' } },
+          this.state.stepIndex % 2 === 1 ? _react2.default.createElement(
+            'h4',
+            { className: 'text-center' },
+            'Please wait for the servey to load. Thanks!'
+          ) : "",
           this.getStepContent(stepIndex),
           _react2.default.createElement(
             'div',
-            { style: { marginTop: 12 } },
-            this.state.stepIndex === 2 || this.state.stepIndex === 4 ? _react2.default.createElement(
-              'p',
+            { style: { marginTop: 12 }, className: 'text-center' },
+            this.state.stepIndex % 2 === 1 ? _react2.default.createElement(
+              'h4',
               null,
               'Please complete the questionnare first'
             ) : "",
             _react2.default.createElement(_RaisedButton2.default, {
-              label: stepIndex === 4 ? 'Finish' : 'Next',
+              label: stepIndex === 5 ? 'Finish' : 'Next',
               primary: true,
               onTouchTap: this.handleNext
             })
@@ -37990,7 +38141,7 @@ var HorizontalLinearStepper = _react2.default.createClass({
 
 exports.default = HorizontalLinearStepper;
 
-},{"material-ui/FlatButton":181,"material-ui/RaisedButton":185,"material-ui/Stepper":192,"react":438}]},{},[452])
+},{"./Concent":454,"material-ui/FlatButton":181,"material-ui/RaisedButton":185,"material-ui/Stepper":192,"react":438}]},{},[452])
 
 
 //# sourceMappingURL=app.js.map
