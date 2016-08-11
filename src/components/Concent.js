@@ -5,6 +5,7 @@ var Concent = React.createClass({
 		return (
 			<div>
 				<div>
+					<img src="https://s10.postimg.org/trj1orwl5/imageedit_18_8044614300.png"/>
 					<h3 className='text-center'>Plain Language Statement</h3>
 					<p><em>You are being invited to take part in a research study. 
 					Before you decide it is important for you to understand why the 
@@ -39,6 +40,7 @@ var Concent = React.createClass({
 				</div>
 				<hr></hr>
 				<div>
+					<img src="https://s10.postimg.org/trj1orwl5/imageedit_18_8044614300.png"/>
 					<h3 className='text-center'>Consent Form</h3>
 					<br/>
 					<h4>Title of Project: 'Social Media's Impact 
