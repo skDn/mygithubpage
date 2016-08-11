@@ -8,6 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Concent from './Concent';
 import FacebookPosts from './FacebookPosts';
+import TwitterPosts from './TwitterPosts';
 
 /**
  * Horizontal steppers are ideal when the contents of one step depend on an earlier step.
@@ -87,7 +88,7 @@ var HorizontalLinearStepper = React.createClass({
       case 3:
         return this.getServey(true, this.props.route.positive);
       case 4:
-        return 'Twitter posts';
+        return <TwitterPosts positive={this.props.route.positive}/>;
       case 5:
         return this.getServey(false, this.props.route.positive);
       default:
@@ -110,9 +111,9 @@ var HorizontalLinearStepper = React.createClass({
         </Stepper>
         <div style={contentStyle}>
           {this.state.finished ? (
-            <p>
+            <h3 className='text-center'>
               Thank you so much for completing the forms!
-            </p>
+            </h3>
           ) : (
             <div style={{height: '100%'}}>
               {(this.state.stepIndex%2 === 1 ) ? <h4 className='text-center'>Please wait for the servey to load. Thanks!</h4> : ""}
