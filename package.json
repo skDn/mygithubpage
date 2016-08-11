@@ -1,6 +1,6 @@
 {
   "name": "dilyanasavcheva",
-  "version": "0.0.1",
+  "version": "0.9.0",
   "description": "Simple stepper with embedded social media posts and questionnaires based on React JS application skeleton (by Maurizio Mangione, https://github.com/Granze/react-starterify) using Browserify and other awesome tools",
   "main": "app.js",
   "repository": {
