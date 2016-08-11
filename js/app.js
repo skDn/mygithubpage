@@ -40677,6 +40677,7 @@ var Concent = _react2.default.createClass({
 			_react2.default.createElement(
 				'div',
 				null,
+				_react2.default.createElement('img', { src: 'https://s10.postimg.org/trj1orwl5/imageedit_18_8044614300.png' }),
 				_react2.default.createElement(
 					'h3',
 					{ className: 'text-center' },
@@ -40746,6 +40747,7 @@ var Concent = _react2.default.createClass({
 			_react2.default.createElement(
 				'div',
 				null,
+				_react2.default.createElement('img', { src: 'https://s10.postimg.org/trj1orwl5/imageedit_18_8044614300.png' }),
 				_react2.default.createElement(
 					'h3',
 					{ className: 'text-center' },
