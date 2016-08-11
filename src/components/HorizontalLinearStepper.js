@@ -7,6 +7,7 @@ import {
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Concent from './Concent';
+import FacebookPosts from './FacebookPosts';
 
 /**
  * Horizontal steppers are ideal when the contents of one step depend on an earlier step.
@@ -47,6 +48,16 @@ var HorizontalLinearStepper = React.createClass({
     }
   },
 
+  getButtonLable: (stepIndex) => {
+    switch (stepIndex) {
+      case 0:
+        return 'Confirm';
+      case 5:
+        return 'Finish';
+      default:
+        return 'Next';
+    }
+  },
   /**
    * Getting a servey.
    * @param {boolean} facebook - is the servey for facebook or not. If not, it is for twitter.
@@ -72,7 +83,7 @@ var HorizontalLinearStepper = React.createClass({
       case 1: 
         return <div style={{height: '995px', maxWidth: '700px'}} className='center-block'><iframe width="100%" height="100%" frameBorder="0" allowTransparency="true" src="https://surveymonkey.com/r/KBSCWQ9"></iframe></div>
       case 2:
-        return 'Facebook posts';
+        return <FacebookPosts positive={this.props.route.positive}/>;
       case 3:
         return this.getServey(true, this.props.route.positive);
       case 4:
@@ -106,10 +117,10 @@ var HorizontalLinearStepper = React.createClass({
             <div style={{height: '100%'}}>
               {(this.state.stepIndex%2 === 1 ) ? <h4 className='text-center'>Please wait for the servey to load. Thanks!</h4> : ""}
               {this.getStepContent(stepIndex)}
-              <div style={{marginTop: 12}} className='text-center'>
-                {(this.state.stepIndex%2 === 1 ) ? <h4>Please complete the questionnare first</h4> : ""}
+              <div style={{margin: 12}} className='text-center'>
+                {(this.state.stepIndex%2 === 1 ) ? <h4>Please complete the questionnare first and press 'Done' before continuing!</h4> : ""}
                 <RaisedButton
-                  label={stepIndex === 5 ? 'Finish' : 'Next'}
+                  label={this.getButtonLable(stepIndex)}
                   primary={true}
                   onTouchTap={this.handleNext}
                 />
