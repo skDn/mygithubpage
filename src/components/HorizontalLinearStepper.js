@@ -9,6 +9,7 @@ import FlatButton from 'material-ui/FlatButton';
 import Concent from './Concent';
 import FacebookPosts from './FacebookPosts';
 import TwitterPosts from './TwitterPosts';
+import Survey from './Survey';
 
 /**
  * Horizontal steppers are ideal when the contents of one step depend on an earlier step.
@@ -24,12 +25,13 @@ var HorizontalLinearStepper = React.createClass({
       stepIndex: 0,
       stepText: [
         'Sign concent form',
-        'Personal Information Servey',
+        'Personal Information Survey',
         'Browse Facebook feed',
         'Fill in a questionnare',
         'Browse Twitter feed',
         'Fill in a questionnare'
-      ]
+      ],
+      isIFrameLoading: false
     }
   },
 
@@ -66,15 +68,27 @@ var HorizontalLinearStepper = React.createClass({
    */
   getServey(facebook, positive) {
     if (facebook && positive) {
-      return <div style={{height: '1064px', maxWidth: '700px'}} className='center-block'><iframe width="100%" height="100%" frameBorder="0" allowTransparency="true" src="https://surveymonkey.com/r/N7YZQBP"></iframe></div>
+      return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={1064} src="https://surveymonkey.com/r/N7YZQBP"/>
     }
     else if (!facebook && positive) {
-      return <div style={{height: '1028px', maxWidth: '700px'}} className='center-block'><iframe width="100%" height="100%" frameBorder="0" allowTransparency="true" src="https://surveymonkey.com/r/N97PVW7"></iframe></div>
+      return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={1028} src="https://surveymonkey.com/r/N97PVW7"/>
     }
     else if (facebook && !positive) {
-      return <div style={{height: '1064px', maxWidth: '700px'}} className='center-block'><iframe width="100%" height="100%" frameborder="0" allowtransparency="true" src="https://surveymonkey.com/r/N9H85WZ"></iframe></div>
+      return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={1064} src="https://surveymonkey.com/r/N9H85WZ"/>
     }
-    return <div style={{height: '1028px', maxWidth: '700px'}} className='center-block'><iframe width="100%" height="100%" frameborder="0" allowtransparency="true" src="https://surveymonkey.com/r/N9ZLZBQ"></iframe></div>
+    return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={1028} src="https://surveymonkey.com/r/N9ZLZBQ"/>
+  },
+
+  _iframeLoaded: function() {
+    this.setState({
+      isIFrameLoading: false
+    });
+  },
+
+  _willMountIFrame: function () {
+    this.setState({
+      isIFrameLoading: true
+    });
   },
 
   getStepContent(stepIndex) {
@@ -82,14 +96,16 @@ var HorizontalLinearStepper = React.createClass({
       case 0:
         return <Concent/>;
       case 1: 
-        return <div style={{height: '995px', maxWidth: '700px'}} className='center-block'><iframe width="100%" height="100%" frameBorder="0" allowTransparency="true" src="https://surveymonkey.com/r/KBSCWQ9"></iframe></div>
+        return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={995} src="https://surveymonkey.com/r/KBSCWQ9"/>
       case 2:
         return <FacebookPosts positive={this.props.route.positive}/>;
       case 3:
+        // get facebook survey
         return this.getServey(true, this.props.route.positive);
       case 4:
         return <TwitterPosts positive={this.props.route.positive}/>;
       case 5:
+        // get twitter survey
         return this.getServey(false, this.props.route.positive);
       default:
         return 'You\'re a long way from home sonny jim!';
@@ -116,7 +132,6 @@ var HorizontalLinearStepper = React.createClass({
             </h3>
           ) : (
             <div style={{height: '100%'}}>
-              {(this.state.stepIndex%2 === 1 ) ? <h4 className='text-center'>Please wait for the servey to load. Thanks!</h4> : ""}
               {this.getStepContent(stepIndex)}
               <div style={{margin: 12}} className='text-center'>
                 {(this.state.stepIndex%2 === 1 ) ? <h4>Please complete the questionnare first and press 'Done' before continuing!</h4> : ""}
@@ -124,6 +139,7 @@ var HorizontalLinearStepper = React.createClass({
                   label={this.getButtonLable(stepIndex)}
                   primary={true}
                   onTouchTap={this.handleNext}
+                  disabled={this.state.isIFrameLoading}
                 />
               </div>
             </div>

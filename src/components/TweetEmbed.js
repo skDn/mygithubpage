@@ -15,13 +15,14 @@
 // <TweetEmbed id='692527862369357824'></TweetEmbed>
 // ```
 
-// You don't have to put `//platform.twitter.com/widgets.js` in your index.html as this lib will put it there if `twttr` is not found on window.  
-import React, {PropTypes} from 'react'
+// You don't have to put `//platform.twitter.com/widgets.js` in your index.html
+// as this lib will put it there if `twttr` is not found on window.
+import React, {PropTypes} from 'react';
 
-var callbacks = [];
+const callbacks = [];
 
-function addScript (src, cb) {
-  if (callbacks.length === 0) {
+function addScript (src, cb) { 
+  if (callbacks.length === 0) { 
     callbacks.push(cb)
     var s = document.createElement('script')
     s.setAttribute('src', src)
@@ -32,7 +33,7 @@ function addScript (src, cb) {
   }
 }
 
-var TweetEmbed = React.createClass ({
+var TweetEmbed = React.createClass ({ 
   propTypes: {
     id: PropTypes.string
   },
