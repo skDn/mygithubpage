@@ -6,6 +6,8 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
+import cookie from 'react-cookie';
+
 import Concent from './Concent';
 import FacebookPosts from './FacebookPosts';
 import TwitterPosts from './TwitterPosts';
@@ -20,9 +22,11 @@ import Survey from './Survey';
 var HorizontalLinearStepper = React.createClass({
 
   getInitialState: function () {
+    var stepCookie = this.getStepCookie();
+    console.log('was here');
     return {
-      finished: false,
-      stepIndex: 0,
+      finished: stepCookie === 6,
+      stepIndex: stepCookie,
       stepText: [
         'Sign concent form',
         'Personal Information Survey',
@@ -35,20 +39,22 @@ var HorizontalLinearStepper = React.createClass({
     }
   },
 
+  getStepCookie: function () {
+    // cookie.save('step', 0, {path: '/'});
+    var step = cookie.load('step')
+    if (step) {
+      return step;
+    }
+    cookie.save('step', 0, {path: '/'});
+    return 0;
+  },
+
   handleNext: function () {
     const {stepIndex} = this.state;
     this.setState({
       stepIndex: stepIndex + 1,
-      finished: stepIndex >= 5,
+      finished: stepIndex === 5
     });
-    this.forceUpdate();
-  },
-
-  handlePrev : () => {
-    const {stepIndex} = this.state;
-    if (stepIndex > 0) {
-      this.setState({stepIndex: stepIndex - 1});
-    }
   },
 
   getButtonLable: (stepIndex) => {
@@ -61,6 +67,12 @@ var HorizontalLinearStepper = React.createClass({
         return 'Next';
     }
   },
+
+  getFinishedMessage: function () {
+    return <h3 className='text-center'>
+              Thank you so much for completing the forms!
+            </h3>
+  },
   /**
    * Getting a servey.
    * @param {boolean} facebook - is the servey for facebook or not. If not, it is for twitter.
@@ -68,24 +80,24 @@ var HorizontalLinearStepper = React.createClass({
    */
   getServey(facebook, positive) {
     if (facebook && positive) {
-      return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={1064} src="https://surveymonkey.com/r/N7YZQBP"/>
+      return <Survey onLoad={this.iframeLoaded} willMount={this.willMountIFrame} height={1064} src="https://surveymonkey.com/r/N7YZQBP"/>
     }
     else if (!facebook && positive) {
-      return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={1028} src="https://surveymonkey.com/r/N97PVW7"/>
+      return <Survey onLoad={this.iframeLoaded} willMount={this.willMountIFrame} height={1028} src="https://surveymonkey.com/r/N97PVW7"/>
     }
     else if (facebook && !positive) {
-      return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={1064} src="https://surveymonkey.com/r/N9H85WZ"/>
+      return <Survey onLoad={this.iframeLoaded} willMount={this.willMountIFrame} height={1064} src="https://surveymonkey.com/r/N9H85WZ"/>
     }
-    return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={1028} src="https://surveymonkey.com/r/N9ZLZBQ"/>
+    return <Survey onLoad={this.iframeLoaded} willMount={this.willMountIFrame} height={1028} src="https://surveymonkey.com/r/N9ZLZBQ"/>
   },
 
-  _iframeLoaded: function() {
+  iframeLoaded: function() {
     this.setState({
       isIFrameLoading: false
     });
   },
 
-  _willMountIFrame: function () {
+  willMountIFrame: function () {
     this.setState({
       isIFrameLoading: true
     });
@@ -96,7 +108,7 @@ var HorizontalLinearStepper = React.createClass({
       case 0:
         return <Concent/>;
       case 1: 
-        return <Survey onLoad={this._iframeLoaded} willMount={this._willMountIFrame} height={995} src="https://surveymonkey.com/r/KBSCWQ9"/>
+        return <Survey onLoad={this.iframeLoaded} willMount={this.willMountIFrame} height={995} src="https://surveymonkey.com/r/KBSCWQ9"/>
       case 2:
         return <FacebookPosts positive={this.props.route.positive}/>;
       case 3:
@@ -108,14 +120,16 @@ var HorizontalLinearStepper = React.createClass({
         // get twitter survey
         return this.getServey(false, this.props.route.positive);
       default:
-        return 'You\'re a long way from home sonny jim!';
+        return this.getFinishedMessage();
     }
   },
 
   render() {
     const {finished, stepIndex} = this.state;
+    // update the cookie with current step
+    cookie.save('step', stepIndex, {path: '/'});
     const contentStyle = {margin: '0 16px', height: '100%'};
-    
+
     return (
       <div style={{width: '100%', margin: 'auto', height: '100%'}}>
         <Stepper activeStep={stepIndex}>
@@ -127,9 +141,7 @@ var HorizontalLinearStepper = React.createClass({
         </Stepper>
         <div style={contentStyle}>
           {this.state.finished ? (
-            <h3 className='text-center'>
-              Thank you so much for completing the forms!
-            </h3>
+            this.getFinishedMessage()
           ) : (
             <div style={{height: '100%'}}>
               {this.getStepContent(stepIndex)}
