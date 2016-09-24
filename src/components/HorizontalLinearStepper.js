@@ -23,7 +23,6 @@ var HorizontalLinearStepper = React.createClass({
 
   getInitialState: function () {
     var stepCookie = this.getStepCookie();
-    console.log('was here');
     return {
       finished: stepCookie === 6,
       stepIndex: stepCookie,
