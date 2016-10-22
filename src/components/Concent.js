@@ -27,15 +27,15 @@ var Concent = React.createClass({
 					 you to scroll through the provided Facebook and Twitter newsfeeds, at your own pace. The experiment concludes with a 
 					 final part consisting of a few questions in regard to the viewed newsfeeds.</p>
 					<br/>
-					<p>Please note that your participation in the study is entirely voluntary. The experiment will take about 10 minutes to complete. If you decide to take part, you will be asked to complete each section in order to proceed to the next one. Nevertheless, you are free to withdraw from participating at any time before or during the experiment. Additionally, if, for any reason, you want to withdraw from the project you may do so without providing explanation, by contacting the researcher before ……..</p>
+					<p>Please note that your participation in the study is entirely voluntary. The experiment will take about 10 minutes to complete. If you decide to take part, you will be asked to complete each section in order to proceed to the next one. Nevertheless, you are free to withdraw from participating at any time before or during the experiment. Additionally, if, for any reason, you want to withdraw from the project you may do so without providing explanation, by contacting the researcher before 31th of January.</p>
 					<br/>
-					<p>Finally, any personal or identifiable information that is collected through the experiment will be kept strictly anonymous and the answers will remain confidential as only the researcher is having access to it.</p>
+					<p>Finally, any personal or identifiable information that is collected through the experiment will be kept strictly anonymous and the answers will remain confidential.</p>
 					 <br/>
 					<p>If you have any further questions please contact me at 2091499S@student.gla.ac.uk.</p>
 					<br/>
 					<p>Thank you for taking the time to read this information sheet.</p>
 					<br/>      
-					<p>If you have any concerns regarding the conduct of this research project, you can contact the College of Social Sciences Ethics Officer Dr Muir Houston, email: Muir.Houston@glasgow.ac.uk</p>
+					<p>If you have any concerns regarding the conduct of this research project, you can contact the School of Social & Political Sciences Ethics Officer: Prof. Keith Kintrea, email: Keith.Kintrea@glasgow.ac.uk</p>
 					<br/>
 				</div>
 				<hr></hr>

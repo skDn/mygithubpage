@@ -24,10 +24,13 @@ var TwitterPosts = React.createClass({
           "https://s22.postimg.org/fyhuikdtt/14509150_1448213108527848_1257778277_n.jpg"
         ],
         positiveImagesSrc : [
-          "https://s22.postimg.org/3l50bno5d/14483819_1448210995194726_599943025_n.jpg"
+          "https://s22.postimg.org/3l50bno5d/14483819_1448210995194726_599943025_n.jpg",
+          "https://s21.postimg.org/c0etjozvb/14556088_1453394551343037_2067995008_n.jpg"
         ],
         negativeImagesSrc : [
-          "https://s22.postimg.org/iv4viujnl/14518290_1448210751861417_1770446361_n.jpg"
+          "https://s22.postimg.org/iv4viujnl/14518290_1448210751861417_1770446361_n.jpg",
+          "https://s21.postimg.org/l6x46z53r/14580307_1453397811342711_467466915_n.jpg"
+
         ]
       }
   },
