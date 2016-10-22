@@ -38451,13 +38451,13 @@ var Concent = _react2.default.createClass({
 				_react2.default.createElement(
 					'p',
 					null,
-					'Please note that your participation in the study is entirely voluntary. The experiment will take about 10 minutes to complete. If you decide to take part, you will be asked to complete each section in order to proceed to the next one. Nevertheless, you are free to withdraw from participating at any time before or during the experiment. Additionally, if, for any reason, you want to withdraw from the project you may do so without providing explanation, by contacting the researcher before ……..'
+					'Please note that your participation in the study is entirely voluntary. The experiment will take about 10 minutes to complete. If you decide to take part, you will be asked to complete each section in order to proceed to the next one. Nevertheless, you are free to withdraw from participating at any time before or during the experiment. Additionally, if, for any reason, you want to withdraw from the project you may do so without providing explanation, by contacting the researcher before 31th of January.'
 				),
 				_react2.default.createElement('br', null),
 				_react2.default.createElement(
 					'p',
 					null,
-					'Finally, any personal or identifiable information that is collected through the experiment will be kept strictly anonymous and the answers will remain confidential as only the researcher is having access to it.'
+					'Finally, any personal or identifiable information that is collected through the experiment will be kept strictly anonymous and the answers will remain confidential.'
 				),
 				_react2.default.createElement('br', null),
 				_react2.default.createElement(
@@ -38475,7 +38475,7 @@ var Concent = _react2.default.createClass({
 				_react2.default.createElement(
 					'p',
 					null,
-					'If you have any concerns regarding the conduct of this research project, you can contact the College of Social Sciences Ethics Officer Dr Muir Houston, email: Muir.Houston@glasgow.ac.uk'
+					'If you have any concerns regarding the conduct of this research project, you can contact the School of Social & Political Sciences Ethics Officer: Prof. Keith Kintrea, email: Keith.Kintrea@glasgow.ac.uk'
 				),
 				_react2.default.createElement('br', null)
 			),
@@ -38911,8 +38911,8 @@ var TwitterPosts = _react2.default.createClass({
   getInitialState: function getInitialState() {
     return {
       neutralImagesSrc: ["https://s22.postimg.org/3op6h1xxd/14509418_1448223658526793_564358391_n.jpg", "https://s22.postimg.org/550oz70u9/14501898_1448222201860272_1637197189_n.jpg", "https://s22.postimg.org/gin8aebcx/14508478_1448221225193703_905500541_n.jpg", "https://s22.postimg.org/q4gsqp2ip/14501982_1448220638527095_259090360_n.jpg", "https://s22.postimg.org/j2iv4hywx/14501906_1448219928527166_562559958_n.jpg", "https://s22.postimg.org/u3e09ir5t/14508515_1448218898527269_1232516005_n.jpg", "https://s22.postimg.org/d451u9fy9/14518824_1448218618527297_1446924070_n.jpg", "https://s22.postimg.org/8v5dp7j0h/14528477_1448218301860662_725075233_n.jpg", "https://s22.postimg.org/bqigw2n0h/14518381_1448218018527357_1534005757_n.jpg", "https://s22.postimg.org/djldke875/14518455_1448217311860761_1942201493_n.jpg", "https://s22.postimg.org/o7p4j8i69/14527640_1448217015194124_1280768197_n.jpg", "https://s22.postimg.org/665zlfo5d/14509265_1448216141860878_974437692_n.jpg", "https://s22.postimg.org/555qwb75t/14508754_1448215715194254_348208937_n.jpg", "https://s22.postimg.org/j041es1kx/14470822_1448215041860988_1285773455_n.jpg", "https://s22.postimg.org/naipad6o1/14518570_1448214668527692_2106655533_n.jpg", "https://s22.postimg.org/46pdu0ttt/14470892_1448214125194413_624431779_n.jpg", "https://s22.postimg.org/o2ld9kav5/14518786_1448213688527790_1320506912_n.jpg", "https://s22.postimg.org/fyhuikdtt/14509150_1448213108527848_1257778277_n.jpg"],
-      positiveImagesSrc: ["https://s22.postimg.org/3l50bno5d/14483819_1448210995194726_599943025_n.jpg"],
-      negativeImagesSrc: ["https://s22.postimg.org/iv4viujnl/14518290_1448210751861417_1770446361_n.jpg"]
+      positiveImagesSrc: ["https://s22.postimg.org/3l50bno5d/14483819_1448210995194726_599943025_n.jpg", "https://s21.postimg.org/c0etjozvb/14556088_1453394551343037_2067995008_n.jpg"],
+      negativeImagesSrc: ["https://s22.postimg.org/iv4viujnl/14518290_1448210751861417_1770446361_n.jpg", "https://s21.postimg.org/l6x46z53r/14580307_1453397811342711_467466915_n.jpg"]
     };
   },
 
